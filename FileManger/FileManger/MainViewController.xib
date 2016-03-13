@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FileManger" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UG-Hy-PQe">
+                    <rect key="frame" x="244.5" y="267" width="111" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="111" id="fyp-6J-d8g"/>
+                        <constraint firstAttribute="height" constant="66" id="h9d-6c-zP3"/>
+                    </constraints>
+                    <state key="normal" title="文件夹"/>
+                    <connections>
+                        <action selector="goto:" destination="-1" eventType="touchUpInside" id="shy-Xo-Y8W"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9UG-Hy-PQe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="d6v-4G-sX0"/>
+                <constraint firstItem="9UG-Hy-PQe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gCW-67-G88"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
