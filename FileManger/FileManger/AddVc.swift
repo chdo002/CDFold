@@ -102,6 +102,7 @@ class AddVc: UIViewController {
             "parentID": parentNode.nodeID!,
             "node_type": !type.on ? "0" : "1"
             ])
+        
         if Node.saveNode(newNode) {
             NSNotificationCenter.defaultCenter().postNotificationName(addNodeNotification, object: nil)
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
