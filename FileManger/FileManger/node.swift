@@ -148,5 +148,22 @@ class Node: BaseDao, IBaseDao {
             }
         }
     }
+
+    // 将文件组成新文件夹
+    class func addNewFolds(originNodes : [NodeModel]){
+        let newNode = NodeModel(data: [
+            "nodeID" : "\(NSDate.timeStamp())",
+            "nodename": "Temp",
+            "parentID": originNodes.first!.parentID!,
+            "node_type": NodeType.fold.rawValue
+            ])
+        self.saveNode(newNode)
+        
+        for n in originNodes {
+            let nN = n.copyNode()
+            nN.parentID = newNode.nodeID
+            self.saveNode(nN)
+        }
+    }
     
 }

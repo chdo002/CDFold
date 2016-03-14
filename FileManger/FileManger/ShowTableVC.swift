@@ -144,11 +144,11 @@ class ShowTableVC: UITableViewController, SWTableViewCellDelegate {
             self.presentViewController(vc, animated: true, completion: { () -> Void in
             })
         case 3: // 删除
-            
             Node.deleteFold(Array(self.workingNodes.values))
-            
+            self.refreshNode()
         case 4: // 组成文件夹
-            print(123)
+            Node.addNewFolds(Array(self.workingNodes.values))
+            self.refreshNode()            
         default:
             return
         }
