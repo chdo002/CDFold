@@ -112,9 +112,7 @@ class AddVc: UIViewController {
     }
     
     func dissmiss(){
-        self.dismissViewControllerAnimated(true) { () -> Void in
-
-        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func switchValuedChanged(swic: UISwitch){
