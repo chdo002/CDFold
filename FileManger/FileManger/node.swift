@@ -9,7 +9,7 @@
 import UIKit
 
 class Node: BaseDao, IBaseDao {
-    
+    // MARK:- 
     static func createTable(db: FMDatabase) -> Bool {
         let createTableSql =
         "CREATE TABLE TB_Node ( " +
@@ -149,7 +149,7 @@ class Node: BaseDao, IBaseDao {
         }
     }
 
-    // 将文件组成新文件夹
+//  MARK:-  将文件组成新文件夹
     class func addNewFolds(originNodes : [NodeModel]){
         let newNode = NodeModel(data: [
             "nodeID" : "\(NSDate.timeStamp())",
