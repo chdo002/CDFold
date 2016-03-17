@@ -8,8 +8,9 @@
 
 import UIKit
 
+
 class Node: BaseDao, IBaseDao {
-    // MARK:- 
+    // MARK:-
     static func createTable(db: FMDatabase) -> Bool {
         let createTableSql =
         "CREATE TABLE TB_Node ( " +
@@ -34,7 +35,7 @@ class Node: BaseDao, IBaseDao {
     // MARK:- 获得根节点
     class func getRootNode() -> NodeModel{
         let sql = "select * from TB_Node where parentID = ? and nodeID = ?"
-        let arg = [0,123123]
+        let arg = [0,rootNodeID]
         var rootnode : NodeModel!
         DBManager.shareInstance().executeQuery(sql, args: arg) { (resultSet, error) -> Void in
             if error == nil {

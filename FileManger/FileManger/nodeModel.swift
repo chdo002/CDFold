@@ -20,6 +20,8 @@ enum NodeType: String {
     case fold = "1"
 }
 
+let rootNodeID = "111111111"
+
 class NodeModel: NSObject, Deserializable, NodeCopy {
   
     var nodeID: String?    // 节点 and key
