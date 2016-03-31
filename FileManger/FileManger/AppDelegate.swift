@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navi = UINavigationController(rootViewController: tab)
         window?.rootViewController = navi
         window?.makeKeyAndVisible()
+        
         DBManager.shareInstance().initDB()
         return true
     }

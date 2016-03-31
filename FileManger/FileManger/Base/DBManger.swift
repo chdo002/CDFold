@@ -69,11 +69,11 @@ class DBManager: NSObject {
         appLog.debug("数据库初始化结束")
         
         Node.saveNode(NodeModel(data: [
-            "nodeID": "123123",
+            "nodeID": "\(rootNodeID)",
             "nodename": "根目录",
             "parentID": "0",
             "node_type": "1"
-            ]))
+        ]))
     }
     
     

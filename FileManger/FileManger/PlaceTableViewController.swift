@@ -53,7 +53,7 @@ class PlaceTableViewController: UITableViewController {
     // 保存到位置
     func selectPlace(){
         
-        if isCopy {
+        if isCopy { // 复制
             
             for node in self.targetNodes {
                 if node.1.nodeID == self.parentNode.nodeID {
@@ -62,11 +62,17 @@ class PlaceTableViewController: UITableViewController {
                 }
             }
             
-            
             Node.copyNode(Array(self.targetNodes.values), toNode: self.parentNode)
             NSNotificationCenter.defaultCenter().postNotificationName(addNodeNotification, object: nil)
-        } else {
-            // 将最初父节点下子节点，移动到当前父节点
+        } else { // 移动
+            for node in self.targetNodes {
+                
+                if node.1.nodeID == self.parentNode.nodeID {
+                    print("不能移动到本目录")
+                    return
+                }
+            }
+            // 将目标节点们，移动到当前父节点下
             Node.moveNodes(Array(self.targetNodes.values), targetNode: self.parentNode)
             NSNotificationCenter.defaultCenter().postNotificationName(addNodeNotification, object: nil)
 
