@@ -26,7 +26,7 @@ class AddVc: UIViewController {
             but.setTitle("关闭", forState: UIControlState.Normal)
             but.backgroundColor = UIColor.redColor()
             but.tintColor = UIColor.whiteColor()
-            but.addTarget(self, action: "dissmiss", forControlEvents: UIControlEvents.TouchUpInside)
+            but.addTarget(self, action: #selector(AddVc.dissmiss), forControlEvents: UIControlEvents.TouchUpInside)
             view.addSubview(but)
             but.snp_makeConstraints { (make) -> Void in
                 make.size.equalTo(CGSizeMake(50, 50))
@@ -38,7 +38,7 @@ class AddVc: UIViewController {
             save.setTitle("保存", forState: UIControlState.Normal)
             save.backgroundColor = UIColor.brownColor()
             save.tintColor = UIColor.whiteColor()
-            save.addTarget(self, action: "save", forControlEvents: UIControlEvents.TouchUpInside)
+            save.addTarget(self, action: #selector(AddVc.save), forControlEvents: UIControlEvents.TouchUpInside)
             view.addSubview(save)
             save.snp_makeConstraints { (make) -> Void in
                 make.size.equalTo(CGSizeMake(50, 50))
@@ -58,7 +58,7 @@ class AddVc: UIViewController {
         
         type = UISwitch()
             view.addSubview(type)
-            type.addTarget(self, action: "switchValuedChanged:", forControlEvents: UIControlEvents.ValueChanged)
+            type.addTarget(self, action: #selector(AddVc.switchValuedChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
         type.snp_makeConstraints { (make) -> Void in
             make.centerX.equalTo(self.view)
             make.top.equalTo(name.snp_bottom).offset(50)

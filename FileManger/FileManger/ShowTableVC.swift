@@ -24,20 +24,20 @@ class ShowTableVC: UITableViewController, SWTableViewCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshNode", name: addNodeNotification, object: nil)
-        let item1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "add:")
-        let item2 = UIBarButtonItem(title: "选择", style: UIBarButtonItemStyle.Plain, target: self, action: "select")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ShowTableVC.refreshNode), name: addNodeNotification, object: nil)
+        let item1 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(ShowTableVC.add(_:)))
+        let item2 = UIBarButtonItem(title: "选择", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShowTableVC.select as (ShowTableVC) -> () -> ()))
         self.navigationItem.rightBarButtonItems = [item1, item2]
         
         tableView.registerNib(UINib(nibName: "NodeCell", bundle: nil), forCellReuseIdentifier: "cell")
 
-        let tItem1 = UIBarButtonItem(title: "复制", style: UIBarButtonItemStyle.Plain, target: self, action: "tool1:")
+        let tItem1 = UIBarButtonItem(title: "复制", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShowTableVC.tool1(_:)))
             tItem1.tag = 1
-        let tItem2 = UIBarButtonItem(title: "移动到", style: UIBarButtonItemStyle.Plain, target: self, action: "tool1:")
+        let tItem2 = UIBarButtonItem(title: "移动到", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShowTableVC.tool1(_:)))
             tItem2.tag = 2
-        let tItem3 = UIBarButtonItem(title: "删除", style: UIBarButtonItemStyle.Plain, target: self, action: "tool1:")
+        let tItem3 = UIBarButtonItem(title: "删除", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShowTableVC.tool1(_:)))
             tItem3.tag = 3
-        let tItem4 = UIBarButtonItem(title: "组成文件夹", style: UIBarButtonItemStyle.Plain, target: self, action: "tool1:")
+        let tItem4 = UIBarButtonItem(title: "组成文件夹", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShowTableVC.tool1(_:)))
             tItem4.tag = 4
         let fix = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         self.toolbarItems = [fix, tItem1, fix, tItem2, fix, tItem3, fix, tItem4, fix]

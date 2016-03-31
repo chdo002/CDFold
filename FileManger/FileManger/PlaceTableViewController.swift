@@ -24,8 +24,8 @@ class PlaceTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "NodeCell", bundle: nil), forCellReuseIdentifier: "cell")
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "退出", style: UIBarButtonItemStyle.Plain, target: self, action: "dismiss")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.Plain, target: self, action: "select")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "退出", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PlaceTableViewController.dismiss))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(PlaceTableViewController.selectPlace))
     }
     
     func dismiss(){
@@ -51,7 +51,7 @@ class PlaceTableViewController: UITableViewController {
     }
     
     // 保存到位置
-    func select(){
+    func selectPlace(){
         
         if isCopy {
             
