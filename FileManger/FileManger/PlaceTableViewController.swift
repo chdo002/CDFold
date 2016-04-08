@@ -72,6 +72,8 @@ class PlaceTableViewController: UITableViewController {
                     return
                 }
             }
+            
+            
             // 将目标节点们，移动到当前父节点下
             Node.moveNodes(Array(self.targetNodes.values), targetNode: self.parentNode)
             NSNotificationCenter.defaultCenter().postNotificationName(addNodeNotification, object: nil)
