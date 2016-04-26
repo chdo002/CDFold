@@ -16,10 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let tab = MainViewController()
-        let navi = UINavigationController(rootViewController: tab)
-        window?.rootViewController = navi
+//        let tab = MainViewController()
+//        let navi = UINavigationController(rootViewController: tab)
+        let vc = UIStoryboard(name: "Demo", bundle: nil).instantiateViewControllerWithIdentifier("enter")
+//        window?.rootViewController = navi
+        window?.rootViewController = vc
+        let navi = (vc as! UITabBarController).viewControllers![0] as! UINavigationController
+        let col = CollectionViewController(collectionViewLayout: CollectFlow())
+        navi.viewControllers = [col]
         window?.makeKeyAndVisible()
+        
+        
         
         DBManager.shareInstance().initDB()
         return true
